@@ -6,7 +6,7 @@ public class boardStateUser {
     private static String[][] board;
     private static Scanner input = new Scanner(System.in);
     private static boolean test = false;
-    private static String CPUChar = " X ";
+    private static String CPUChar = " O ";
     private static String unchanged = " - ";
     private static int xSpot = -1;
     private static int ySpot = -1;
@@ -150,7 +150,7 @@ public class boardStateUser {
     }
 
     private static void userMove() {
-        String userChar = " O "; String CPUChar = " X ";
+        String userChar = " X "; String CPUChar = " O ";
         System.out.println("Please enter the x (row) coordinate of your move.");
         String xCoordinate = input.nextLine(); xCoordinate = xCoordinate.trim();
         int xPoint = Integer.parseInt(xCoordinate);
@@ -187,7 +187,7 @@ public class boardStateUser {
     }
 
     private static void blockWin() {
-        String userChar = " O ";
+        String userChar = " X ";
         if (board[0][0].equals(userChar) && board[0][1].equals(userChar) && board[0][2].equals(unchanged))
             board[0][2] = CPUChar;
         else if (board[0][0].equals(userChar) && board[0][2].equals(userChar) && board[0][1].equals(unchanged))
